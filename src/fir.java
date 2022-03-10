@@ -20,7 +20,7 @@ public static String pal(String m, int n){
    return temp;
 
 }
-
+// new changes will be added soon
 
 
 
