@@ -15,7 +15,7 @@ public static String pal(String m, int n){
 
     }
 
-   temp =  + pal(m,n-1);
+  // temp =  + pal(m,n-1);
     System.out.println(m.substring(n));
    return temp;
 
