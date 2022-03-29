@@ -1,40 +1,59 @@
 import java.util.Scanner;
 
-public class fir {
-//static int i=0;
-//    fir(int k){
-//      i =k;
-//
-//    }
-static String temp= null ;
-public static String pal(String m, int n){
+// A recursive JAVA program to
+// check whether a given String
+// is palindrome or not
+import java.io.*;
 
-    if(n==1){
-        System.out.println(temp);
-        return temp;
+class fir
+{
+    // A recursive function that
+    // check a str(s..e) is
+    // palindrome or not.
+    static boolean isPalRec(String str,
+                            int s, int e)
+    {
+        // If there is only one character
+        if (s == e)
+            return true;
 
+        // If first and last
+        // characters do not match
+        if ((str.charAt(s)) != (str.charAt(e)))
+            return false;
+
+        // If there are more than
+        // two characters, check if
+        // middle substring is also
+        // palindrome or not.
+        if (s < e + 1)
+            return isPalRec(str, s + 1, e - 1);
+
+        return true;
     }
 
-  // temp =  + pal(m,n-1);
-    System.out.println(m.substring(n));
-   return temp;
+    static boolean isPalindrome(String str)
+    {
+        int n = str.length();
 
-}
-// new changes will be added soon
+        // An empty string is
+        // considered as palindrome
+        if (n == 0)
+            return true;
 
+        return isPalRec(str, 0, n - 1);
+    }
 
+    // Driver Code
+    public static void main(String args[])
+    {
+        String str = "geeg";
 
-    public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
-        int n;
-        String s;
-        String m = "madam";
-        n = m.length();
-
-        s=pal(m, n-1);
-
-        m.compareTo(s);
-        System.out.println(s);
-    //    System.out.println(i);
+        if (isPalindrome(str))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
     }
 }
+
+
